@@ -18,17 +18,17 @@ function App() {
     {
       name: "Wood",
       price: 10,
-      img: "https://img.freepik.com/free-photo/beige-wooden-textured-flooring-background_53876-104668.jpg?w=2000",
+      img: "https://cdn.shopify.com/s/files/1/0913/3370/articles/timber_59a6229c-0fa5-46e7-82cf-6138c5bc8233_1600x.jpg?v=1465035409",
     },
     {
       name: "Grass",
       price: 20,
-      img: "https://img.freepik.com/free-photo/green-grass-texture-background_53876-104667.jpg?w=2000",
+      img: "https://www.thespruce.com/thmb/WHDh42dmxIiAg5YuTftvBrqLevk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/zoysia-grass-plant-profile-4691117-hero-2c01933247654f5b8c694a49eb6fa7bc.jpg",
     },
     {
       name: "Stone",
       price: 30,
-      img: "https://img.freepik.com/free-photo/white-stone-texture-background_53876-104669.jpg?w=2000",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Moelen.jpg/640px-Moelen.jpg",
     },
   ];
 
@@ -43,10 +43,11 @@ function App() {
   }, [loading]);
 
   return (
-    <div className="h-screen flex justify-center items-center gap-10">
+    <div className="h-screen flex flex-col justify-center items-center gap-10">
+      <img src="https://www.khatersports.com/images/logo.jpg" alt="logo" />
       <form
         onSubmit={calculatePrice}
-        className="flex flex-col border p-10 rounded-lg w-[450px]"
+        className="flex flex-col border p-10 rounded-lg w-[350px] lg:w-[450px]"
       >
         <h1 className="text-[#c62b1c] text-xl font-semibold mb-4">
           Price Calculator
@@ -57,7 +58,7 @@ function App() {
             <p className="text-[#c62b1c] ml-2">M²</p>.
           </label>
           <input
-            className="px-4 py-2 border rounded mb-4 mt-2 focus:outline-[#c62b1c]"
+            className="px-4 py-2 border rounded mb-6 mt-4 focus:outline-[#c62b1c]"
             type="text"
             id="area"
             placeholder="Area"
@@ -67,9 +68,9 @@ function App() {
         </div>
         <div className="flex flex-col">
           <label className="font-semibold" htmlFor="material">
-            Materials
+            Choose your Material
           </label>
-          <div className="flex justify-between mb-4 mt-2">
+          <div className="flex justify-between mb-6 mt-4">
             {materials.map((material, index) => (
               <div
                 onClick={() => {
@@ -99,9 +100,9 @@ function App() {
         >
           Calculate
         </button>
-        <div className="flex flex-col items-center text-2xl font-semibold h-16 mt-8">
+        <div className="flex flex-col items-center text-2xl font-semibold h-20 mt-8">
           Total Cost{" "}
-          <span className="text-[#c62b1c] text-xl">
+          <span className="text-[#c62b1c] text-lg lgtext-xl">
             {price === 0 || price === undefined ? (
               "Please fill the above entries first."
             ) : loading ? (
@@ -109,7 +110,7 @@ function App() {
                 <span className="loader"></span>
               </div>
             ) : (
-              price + " L.E"
+              <p className="px-8 py-2 mt-2 border rounded-md">{price} L.E</p>
             )}
           </span>
         </div>
