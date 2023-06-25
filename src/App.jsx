@@ -59,7 +59,7 @@ function App() {
           </label>
           <input
             className="px-4 py-2 border rounded mb-6 mt-4 focus:outline-[#c62b1c]"
-            type="text"
+            type="number"
             id="area"
             placeholder="Area"
             onChange={(e) => setArea(e.target.value)}
